@@ -16,3 +16,18 @@ $ vendor/bin/phpcs --standard=phpcs.xml ./src
 ```bash
 $ cd tests && ../vendor/bin/phpunit
 ```
+
+### Basic Usage Example
+```php
+$config = new \Cinexpert\Tools\ToolsConfig();
+$config
+    ->setAwsRegion('eu-west-1')
+    ->setAwsKey('...')
+    ->setAwsSecret('...');
+
+$tools = new \Cinexpert\Tools\Tools($config);
+
+$queue = $tools->get('tools.queue');
+
+$queue->sendMessage('https://my-queue-url', 'message text');
+```
