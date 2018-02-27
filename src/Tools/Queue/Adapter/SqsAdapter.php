@@ -13,8 +13,6 @@
 namespace Cinexpert\Tools\Queue\Adapter;
 
 use Aws\Sqs\SqsClient;
-use Cinexpert\Tools\AwsConfigAwareInterface;
-use Cinexpert\Tools\AwsConfigAwareTrait;
 use Cinexpert\Tools\Queue\Message;
 
 /**
@@ -27,22 +25,27 @@ use Cinexpert\Tools\Queue\Message;
  * @license     Unauthorized copying of this source code, via any medium is strictly
  *              prohibited, proprietary and confidential.
  */
-class SqsAdapter implements AdapterInterface, AwsConfigAwareInterface
+class SqsAdapter implements AdapterInterface
 {
-    use AwsConfigAwareTrait;
+    /** @var SqsClient */
+    protected $sqsClient;
 
     /**
-     * @inheritdoc
+     * @return SqsClient
      */
-    protected function getClient()
+    public function getSqsClient(): SqsClient
     {
-        $parameters = ['version' => '2012-11-05'];
+        return $this->sqsClient;
+    }
 
-        if ($this->getAwsConfig()) {
-            $parameters = array_merge($parameters, $this->getAwsConfig()->toArray());
-        }
-
-        return new SqsClient($parameters);
+    /**
+     * @param SqsClient $sqsClient
+     * @return SqsAdapter
+     */
+    public function setSqsClient(SqsClient $sqsClient): SqsAdapter
+    {
+        $this->sqsClient = $sqsClient;
+        return $this;
     }
 
     /**
@@ -50,7 +53,7 @@ class SqsAdapter implements AdapterInterface, AwsConfigAwareInterface
      */
     public function sendMessage(string $queueUrl, string $messageBody): AdapterInterface
     {
-        $this->getClient()->sendMessage([
+        $this->getSqsClient()->sendMessage([
             'QueueUrl'    => $queueUrl,
             'MessageBody' => $messageBody,
         ]);
@@ -61,9 +64,9 @@ class SqsAdapter implements AdapterInterface, AwsConfigAwareInterface
     /**
      * @inheritdoc
      */
-    public function receiveMessage(string $queueUrl): Message
+    public function receiveMessage(string $queueUrl): ?Message
     {
-        $result = $this->getClient()->receiveMessage(['QueueUrl' => $queueUrl]);
+        $result = $this->getSqsClient()->receiveMessage(['QueueUrl' => $queueUrl]);
 
         if (!empty($result['Messages'])) {
             // By default, only one message will be returned
@@ -84,11 +87,11 @@ class SqsAdapter implements AdapterInterface, AwsConfigAwareInterface
      */
     public function deleteMessage(string $queueUrl, Message $message): AdapterInterface
     {
-        $this->getClient()->deleteMessage([
+        $this->getSqsClient()->deleteMessage([
             'QueueUrl'      => $queueUrl,
             'ReceiptHandle' => $message->getReceiptHandle()
         ]);
 
-        return null;
+        return $this;
     }
 }

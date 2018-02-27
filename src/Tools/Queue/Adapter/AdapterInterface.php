@@ -41,7 +41,7 @@ interface AdapterInterface
      * @param string $queueUrl
      * @return Message
      */
-    public function receiveMessage(string $queueUrl): Message;
+    public function receiveMessage(string $queueUrl): ?Message;
 
     /**
      * @param string $queueUrl

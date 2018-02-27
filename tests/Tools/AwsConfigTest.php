@@ -1,10 +1,30 @@
 <?php
+/**
+ * AwsConfigTest.php
+ *
+ * @date        27.02.2018
+ * @author      Pascal Paulis <pascal.paulis@continuousphp.com>
+ * @file        AwsConfigTest.php
+ * @copyright   Copyright (c) CineXpert - All rights reserved
+ * @license     Unauthorized copying of this source code, via any medium is strictly
+ *              prohibited, proprietary and confidential.
+ */
 
-namespace Cinexpert\Tools\Test;
+namespace Cinexpert\Test\Tools;
 
 use Cinexpert\Tools\AwsConfig;
 use PHPUnit\Framework\TestCase;
 
+/**
+ * Class AwsConfigTest
+ *
+ * @package     Cinexpert
+ * @subpackage  Test
+ * @author      Pascal Paulis <pascal.paulis@continuousphp.com>
+ * @copyright   Copyright (c) CineXpert - All rights reserved
+ * @license     Unauthorized copying of this source code, via any medium is strictly
+ *              prohibited, proprietary and confidential.
+ */
 class AwsConfigTest extends TestCase
 {
     /** @var AwsConfig */

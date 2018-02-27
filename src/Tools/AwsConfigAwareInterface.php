@@ -21,6 +21,8 @@ namespace Cinexpert\Tools;
  * @copyright   Copyright (c) CineXpert - All rights reserved
  * @license     Unauthorized copying of this source code, via any medium is strictly
  *              prohibited, proprietary and confidential.
+ *
+ * @codeCoverageIgnore
  */
 interface AwsConfigAwareInterface
 {

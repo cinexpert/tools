@@ -18,7 +18,7 @@ use Cinexpert\Tools\Queue\Adapter\AdapterInterface;
 use Zend\Console\ColorInterface;
 
 /**
- * Queue
+ * Class Queue
  *
  * @package     Cinexpert  
  * @subpackage  Tools
