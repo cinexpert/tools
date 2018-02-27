@@ -1,9 +1,9 @@
 {
-  "name": "cinexpert/model",
-  "description": "Model business layer",
+  "name": "cinexpert/tools",
+  "description": "CineXpert Tools",
   "type": "library",
   "license": "proprietary",
-  "homepage": "https://bitbucket.org/cinexpert/model",
+  "homepage": "https://bitbucket.org/cinexpert/tools",
   "require": {
     "php":                               ">=7.1",
     "zendframework/zend-servicemanager": "^3.3",
