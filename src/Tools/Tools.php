@@ -35,13 +35,12 @@ class Tools extends ServiceManager
         $services = require __DIR__ . '/../../config/module.config.php';
         parent::__construct($services['service_manager']);
 
-        $this->setService(
-            'aws_config',
-            [
-                'region' => $config->getAwsRegion(),
-                'key'    => $config->getAwsKey(),
-                'secret' => $config->getAwsSecret()
-            ]
-        );
+        $awsConfig = new AwsConfig();
+        $awsConfig
+            ->setAwsRegion($config->getAwsRegion())
+            ->setAwsKey($config->getAwsKey())
+            ->setAwsRegion($config->getAwsRegion());
+
+        $this->setService('aws_config', $awsConfig);
     }
 }
