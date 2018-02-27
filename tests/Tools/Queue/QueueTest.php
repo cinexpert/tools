@@ -41,6 +41,7 @@ class QueueTest extends TestCase
 
         $adapterMock = $this->createMock('\Cinexpert\Tools\Queue\Adapter\AdapterInterface');
         $this->instance->setAdapter($adapterMock);
+        $this->adapterMock = $adapterMock;
 
         $console = $this->createMock('Zend\Console\Adapter\AdapterInterface');
         $this->instance->setConsole($console);
