@@ -27,7 +27,7 @@ $config
 
 $tools = new \Cinexpert\Tools\Tools($config);
 
-$queue = $tools->get('tools.queue');
+$queue = $tools->get('queue');
 
 $queue->sendMessage('https://my-queue-url', 'message text');
 ```
