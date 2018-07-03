@@ -3,16 +3,14 @@
  * AdapterInterface.php
  *
  * @date        27.02.2018
- * @author      Pascal Paulis <pascal.paulis@continuousphp.com>
+ * @author      Pascal Paulis <pascal.paulis@cinexpert.net>
  * @file        AdapterInterface.php
  * @copyright   Copyright (c) CineXpert - All rights reserved
  * @license     Unauthorized copying of this source code, via any medium is strictly
  *              prohibited, proprietary and confidential.
  */
 
-namespace Cinexpert\Tools\Queue\Adapter;
-
-use Cinexpert\Tools\Queue\Message;
+namespace Cinexpert\Tools\Notification\Adapter;
 
 /**
  * AdapterInterface
@@ -27,26 +25,11 @@ use Cinexpert\Tools\Queue\Message;
 interface AdapterInterface
 {
     /**
-     * Send a message.
+     * Send a notification.
      *
-     * @param string $queueUrl
-     * @param string $messageBody
-     * @return $this
+     * @param string $topic
+     * @param string $message
+     * @return AdapterInterface
      */
-    public function sendMessage(string $queueUrl, string $messageBody): AdapterInterface;
-
-    /**
-     * Receive a message.
-     *
-     * @param string $queueUrl
-     * @return Message
-     */
-    public function receiveMessage(string $queueUrl): ?Message;
-
-    /**
-     * @param string $queueUrl
-     * @param Message $message
-     * @return $this
-     */
-    public function deleteMessage(string $queueUrl, Message $message): AdapterInterface;
+    public function sendNotification(string $topic, string $message): AdapterInterface;
 }
