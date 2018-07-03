@@ -55,11 +55,8 @@ class SnsAdapterTest extends TestCase
             ->expects($this->once())
             ->method('publish')
             ->with([
-                'Message'           => $messageBody,
-                'MessageAttributes' =>
-                    [
-                        'TopicArn' => $topic
-                    ]
+                'TopicArn' => $topic,
+                'Message'  => $messageBody
             ]);
 
         $this->instance->sendNotification($topic, $messageBody);

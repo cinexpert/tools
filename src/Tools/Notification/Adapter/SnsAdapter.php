@@ -53,11 +53,8 @@ class SnsAdapter implements AdapterInterface
     public function sendNotification(string $topic, string $message): AdapterInterface
     {
         $this->getSnsClient()->publish([
-            'Message'           => $message,
-            'MessageAttributes' =>
-                [
-                    'TopicArn' => $topic
-                ]
+            'TopicArn' => $topic,
+            'Message'  => $message
         ]);
 
         return $this;
