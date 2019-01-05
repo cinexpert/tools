@@ -42,5 +42,13 @@ class Tools extends ServiceManager
             ->setAwsSecret($config->getAwsSecret());
 
         $this->setService('aws_config', $awsConfig);
+
+        $this->setService(
+            'pubsub_config',
+            [
+                'publisherKey'  => $config->getPublisherKey(),
+                'subscriberKey' => $config->getSubscriberKey(),
+            ]
+        );
     }
 }

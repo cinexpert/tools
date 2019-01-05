@@ -37,7 +37,7 @@ class SnsAdapterFactory implements FactoryInterface
             $container->get('aws_config')->toArray()
         );
 
-        $adapter = new \Cinexpert\Tools\Notification\Adapter\SnsAdapter();
+        $adapter = new SnsAdapter();
         $adapter->setSnsClient(new SnsClient($parameters));
 
         return $adapter;

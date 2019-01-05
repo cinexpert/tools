@@ -35,6 +35,12 @@ class ToolsConfig
     /** @var string */
     protected $awsSecret;
 
+    /** @var string */
+    protected $publisherKey;
+
+    /** @var string */
+    protected $subscriberKey;
+
     /**
      * @return string
      */
@@ -86,6 +92,42 @@ class ToolsConfig
     public function setAwsSecret(string $awsSecret): ToolsConfig
     {
         $this->awsSecret = $awsSecret;
+        return $this;
+    }
+
+    /**
+     * @return string
+     */
+    public function getPublisherKey(): string
+    {
+        return $this->publisherKey;
+    }
+
+    /**
+     * @param string $publisherKey
+     * @return ToolsConfig
+     */
+    public function setPublisherKey(string $publisherKey): ToolsConfig
+    {
+        $this->publisherKey = $publisherKey;
+        return $this;
+    }
+
+    /**
+     * @return string
+     */
+    public function getSubscriberKey(): string
+    {
+        return $this->subscriberKey;
+    }
+
+    /**
+     * @param string $subscriberKey
+     * @return ToolsConfig
+     */
+    public function setSubscriberKey(string $subscriberKey): ToolsConfig
+    {
+        $this->subscriberKey = $subscriberKey;
         return $this;
     }
 }
