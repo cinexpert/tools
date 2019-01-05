@@ -44,7 +44,7 @@ class ToolsConfig
     /**
      * @return string
      */
-    public function getAwsRegion(): string
+    public function getAwsRegion(): ?string
     {
         return $this->awsRegion;
     }
@@ -62,7 +62,7 @@ class ToolsConfig
     /**
      * @return string
      */
-    public function getAwsKey(): string
+    public function getAwsKey(): ?string
     {
         return $this->awsKey;
     }
@@ -80,7 +80,7 @@ class ToolsConfig
     /**
      * @return string
      */
-    public function getAwsSecret(): string
+    public function getAwsSecret(): ?string
     {
         return $this->awsSecret;
     }
