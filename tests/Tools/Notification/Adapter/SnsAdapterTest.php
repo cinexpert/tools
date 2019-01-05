@@ -3,7 +3,7 @@
  * SnsAdapterTest.php
  *
  * @date        03.07.2018
- * @author      Pascal Paulis <pascal.paulis@continuousphp.com>
+ * @author      Pascal Paulis <pascal.paulis@cinexpert.net>
  * @file        SnsAdapterTest.php
  * @copyright   Copyright (c) CineXpert - All rights reserved
  * @license     Unauthorized copying of this source code, via any medium is strictly
@@ -21,7 +21,7 @@ use PHPUnit\Framework\TestCase;
  * 
  * @package     ToolsTest
  * @subpackage  Service
- * @author      Pascal Paulis <pascal.paulis@continuousphp.com>
+ * @author      Pascal Paulis <pascal.paulis@cinexpert.net>
  * @copyright   Copyright (c) CineXpert - All rights reserved
  * @license     Unauthorized copying of this source code, via any medium is strictly
  *              prohibited, proprietary and confidential.

@@ -23,16 +23,16 @@ namespace Cinexpert\Tools\PubSub;
  */
 class PubSub
 {
-    /** @var \Application\Service\PubSub\Adapter\AdapterInterface $adapter */
+    /** @var \Cinexpert\Tools\PubSub\Adapter\AdapterInterface $adapter */
     protected $adapter;
 
     /**
      * Set the adapter.
      *
-     * @param \Application\Service\PubSub\Adapter\AdapterInterface $adapter The adapter.
+     * @param \Cinexpert\Tools\PubSub\Adapter\AdapterInterface $adapter The adapter.
      * @return $this Provides a fluent interface.
      */
-    public function setAdapter(\Application\Service\PubSub\Adapter\AdapterInterface $adapter)
+    public function setAdapter(\Cinexpert\Tools\PubSub\Adapter\AdapterInterface $adapter)
     {
         $this->adapter = $adapter;
         return $this;
@@ -41,7 +41,7 @@ class PubSub
     /**
      * Return the adapter.
      *
-     * @return \Application\Service\PubSub\Adapter\AdapterInterface The adapter.
+     * @return \Cinexpert\Tools\PubSub\Adapter\AdapterInterface The adapter.
      */
     public function getAdapter()
     {

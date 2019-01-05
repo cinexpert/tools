@@ -3,7 +3,7 @@
  * SqsAdapterTest.php
  *
  * @date        05.02.2016
- * @author      Pascal Paulis <pascal.paulis@continuousphp.com>
+ * @author      Pascal Paulis <pascal.paulis@cinexpert.net>
  * @file        SqsAdapterTest.php
  * @copyright   Copyright (c) CineXpert - All rights reserved
  * @license     Unauthorized copying of this source code, via any medium is strictly
@@ -22,7 +22,7 @@ use PHPUnit\Framework\TestCase;
  * 
  * @package     ToolsTest
  * @subpackage  Service
- * @author      Pascal Paulis <pascal.paulis@continuousphp.com>
+ * @author      Pascal Paulis <pascal.paulis@cinexpert.net>
  * @copyright   Copyright (c) CineXpert - All rights reserved
  * @license     Unauthorized copying of this source code, via any medium is strictly
  *              prohibited, proprietary and confidential.

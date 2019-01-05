@@ -3,7 +3,7 @@
  * ToolsConfigTest.php
  *
  * @date        27.02.2018
- * @author      Pascal Paulis <pascal.paulis@continuousphp.com>
+ * @author      Pascal Paulis <pascal.paulis@cinexpert.net>
  * @file        ToolsConfigTest.php
  * @copyright   Copyright (c) CineXpert - All rights reserved
  * @license     Unauthorized copying of this source code, via any medium is strictly
@@ -20,7 +20,7 @@ use PHPUnit\Framework\TestCase;
  *
  * @package     Cinexpert
  * @subpackage  Test
- * @author      Pascal Paulis <pascal.paulis@continuousphp.com>
+ * @author      Pascal Paulis <pascal.paulis@cinexpert.net>
  * @copyright   Copyright (c) CineXpert - All rights reserved
  * @license     Unauthorized copying of this source code, via any medium is strictly
  *              prohibited, proprietary and confidential.
@@ -52,5 +52,19 @@ class ToolsConfigTest extends TestCase
         $data = 'fez65g4ezgezgh4rezg6ez54gezg54ezg654/56g4ezg';
         $this->assertSame($this->instance, $this->instance->setAwsSecret($data));
         $this->assertEquals($data, $this->instance->getAwsSecret());
+    }
+
+    public function testSetGetPublisherKey()
+    {
+        $data = 'fez65g4ezgezgh4rezg6ez54gezg54ezg654/56g4ezg';
+        $this->assertSame($this->instance, $this->instance->setPublisherKey($data));
+        $this->assertEquals($data, $this->instance->getPublisherKey());
+    }
+
+    public function testSetGetSubscriberKey()
+    {
+        $data = 'fez65g4ezgezgh4rezg6ez54gezg54ezg654/56g4ezg';
+        $this->assertSame($this->instance, $this->instance->setSubscriberKey($data));
+        $this->assertEquals($data, $this->instance->getSubscriberKey());
     }
 }

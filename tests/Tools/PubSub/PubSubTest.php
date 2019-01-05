@@ -1,23 +1,23 @@
 <?php
 /**
- * NotificationTest.php
+ * PubSubTest.php
  *
- * @date        03.07.2018
+ * @date        05.01.2019
  * @author      Pascal Paulis <pascal.paulis@cinexpert.net>
- * @file        NotificationTest.php
+ * @file        PubSubTest.php
  * @copyright   Copyright (c) CineXpert - All rights reserved
  * @license     Unauthorized copying of this source code, via any medium is strictly
  *              prohibited, proprietary and confidential.
  */
 
-namespace Cinexpert\Test\Tools\Notification;
+namespace Cinexpert\Test\Tools\PubSub;
 
-use Cinexpert\Tools\Notification\Notification;
+use Cinexpert\Tools\PubSub\PubSub;
 use PHPUnit\Framework\MockObject\MockObject;
 use PHPUnit\Framework\TestCase;
 
 /**
- * Class NotificationTest
+ * Class PubSubTest
  * 
  * @package     Cinexpert
  * @subpackage  Test
@@ -26,9 +26,9 @@ use PHPUnit\Framework\TestCase;
  * @license     Unauthorized copying of this source code, via any medium is strictly
  *              prohibited, proprietary and confidential.
  */
-class NotificationTest extends TestCase
+class PubSubTest extends TestCase
 {
-    /** @var  Notification */
+    /** @var  PubSub */
     protected $instance;
 
     /** @var MockObject */
@@ -36,26 +36,23 @@ class NotificationTest extends TestCase
 
     public function setUp()
     {
-        $this->instance = new Notification();
+        $this->instance = new PubSub();
 
-        $adapterMock = $this->createMock('\Cinexpert\Tools\Notification\Adapter\AdapterInterface');
+        $adapterMock = $this->createMock('\Cinexpert\Tools\PubSub\Adapter\AdapterInterface');
         $this->instance->setAdapter($adapterMock);
         $this->adapterMock = $adapterMock;
-
-        $console = $this->createMock('Zend\Console\Adapter\AdapterInterface');
-        $this->instance->setConsole($console);
     }
 
-    public function testSendMessage()
+    public function testPublish()
     {
-        $topic   = 'my-topic';
+        $channel = 'my-channel';
         $message = 'gzegezbzrbrzbzrgagaebrzbnrzb';
 
         $this->adapterMock
             ->expects($this->once())
-            ->method('sendNotification')
-            ->with($topic, $message);
+            ->method('publish')
+            ->with($channel, $message);
 
-        $this->instance->sendNotification($topic, $message);
+        $this->instance->publish($channel, $message);
     }
 }

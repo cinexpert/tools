@@ -3,7 +3,7 @@
  * ConsoleAwareInterface.php
  *
  * @date        27.02.2018
- * @author      Pascal Paulis <pascal.paulis@continuousphp.com>
+ * @author      Pascal Paulis <pascal.paulis@cinexpert.net>
  * @file        ConsoleAwareInterface.php
  * @copyright   Copyright (c) CineXpert - All rights reserved
  * @license     Unauthorized copying of this source code, via any medium is strictly
@@ -19,7 +19,7 @@ use Zend\Console\Adapter\AdapterInterface as Console;
  *
  * @package     Cinexpert
  * @subpackage  Tools
- * @author      Pascal Paulis <pascal.paulis@continuousphp.com>
+ * @author      Pascal Paulis <pascal.paulis@cinexpert.net>
  * @copyright   Copyright (c) CineXpert - All rights reserved
  * @license     Unauthorized copying of this source code, via any medium is strictly
  *              prohibited, proprietary and confidential.
