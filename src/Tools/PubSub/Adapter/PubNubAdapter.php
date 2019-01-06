@@ -42,6 +42,9 @@ class PubNubAdapter implements AdapterInterface
         return $this;
     }
 
+    /**
+     * @inheritdoc
+     */
     public function publish(string $channel, $message)
     {
         $this->getPubNub()
@@ -50,5 +53,35 @@ class PubNubAdapter implements AdapterInterface
             ->message($message)
             ->usePost(true)
             ->sync();
+    }
+
+    /**
+     * @inheritdoc
+     */
+    public function hereNow(): array
+    {
+        $result = $this->getPubNub()
+            ->hereNow()
+            ->includeState(true)
+            ->includeUuids(true)
+            ->sync();
+
+        $hereNow = [];
+
+        foreach ($result->getChannels() as $channel) {
+            $uuids = [];
+
+            foreach ($channel->getOccupants() as $occupant) {
+                $uuids[] = $occupant->getUuid();
+            }
+
+            $hereNow[$channel->getChannelName()] =
+                [
+                    'uuids'     => $uuids,
+                    'occupancy' => $channel->getOccupancy(),
+                ];
+        }
+
+        return $hereNow;
     }
 }

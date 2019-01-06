@@ -52,4 +52,14 @@ class PubSub
     {
         return $this->getAdapter()->publish($channel, $message);
     }
+
+    /**
+     * Get a list of everyone in every channel, grouped by channel.
+     *
+     * @return array A list of everyone in every channel, grouped by channel
+     */
+    public function hereNow(): array
+    {
+        return $this->getAdapter()->hereNow();
+    }
 }
