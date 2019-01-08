@@ -2,7 +2,6 @@
 
 namespace Cinexpert\Tools\PubSub\Adapter;
 
-use Psr\Log\NullLogger;
 use PubNub\PNConfiguration;
 use PubNub\PubNub;
 use Zend\ServiceManager\Factory\FactoryInterface;
@@ -20,7 +19,6 @@ class PubNubAdapterFactory implements FactoryInterface
             ->setSecure(true);
 
         $pubNubClient = new PubNub($pnConfiguration);
-        $pubNubClient->getLogger()->pushHandler(new NullLogger());
 
         $pubNubAdapter = new \Cinexpert\Tools\PubSub\Adapter\PubNubAdapter();
         $pubNubAdapter->setPubNub($pubNubClient);
