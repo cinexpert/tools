@@ -37,4 +37,6 @@ interface AdapterInterface
      * @return array A list of everyone in every channel, grouped by channel
      */
     public function hereNow(): array;
+
+    public function subscribe(array $channels, callable $callable): void;
 }

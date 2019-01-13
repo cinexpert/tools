@@ -84,4 +84,15 @@ class PubNubAdapter implements AdapterInterface
 
         return $hereNow;
     }
+
+    /**
+     * @inheritdoc
+     */
+    public function subscribe(array $channels, callable $callable): void
+    {
+        $this
+            ->getPubNub()
+            ->subscribe()
+            ->channels($channels, $callable);
+    }
 }
