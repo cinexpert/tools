@@ -10,6 +10,9 @@
 
 namespace Cinexpert\Tools\PubSub\Adapter;
 
+use Cinexpert\Tools\PubSub\PubSubConnectionException;
+use PubNub\Exceptions\PubNubConnectionException;
+
 /**
  * PubNubAdapter
  *
@@ -60,11 +63,15 @@ class PubNubAdapter implements AdapterInterface
      */
     public function hereNow(): array
     {
-        $result = $this->getPubNub()
-            ->hereNow()
-            ->includeState(true)
-            ->includeUuids(true)
-            ->sync();
+        try {
+            $result = $this->getPubNub()
+                ->hereNow()
+                ->includeState(true)
+                ->includeUuids(true)
+                ->sync();
+        } catch (PubNubConnectionException $e) {
+            throw new PubSubConnectionException();
+        }
 
         $hereNow = [];
 
