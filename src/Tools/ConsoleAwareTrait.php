@@ -12,7 +12,7 @@
 
 namespace Cinexpert\Tools;
 
-use Zend\Console\Adapter\AdapterInterface as Console;
+use Laminas\Console\Adapter\AdapterInterface as Console;
 
 /**
  * ConsoleAwareTrait

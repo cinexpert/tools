@@ -12,7 +12,7 @@
 
 namespace Cinexpert\Tools;
 
-use Zend\ServiceManager\ServiceManager;
+use Laminas\ServiceManager\ServiceManager;
 
 /**
  * Class Tools

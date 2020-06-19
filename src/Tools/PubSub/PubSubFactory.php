@@ -2,7 +2,7 @@
 
 namespace Cinexpert\Tools\PubSub;
 
-use Zend\ServiceManager\Factory\FactoryInterface;
+use Laminas\ServiceManager\Factory\FactoryInterface;
 
 class PubSubFactory implements FactoryInterface
 {

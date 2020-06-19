@@ -13,7 +13,7 @@
 namespace Cinexpert\Tools\Queue;
 
 use Interop\Container\ContainerInterface;
-use Zend\ServiceManager\Factory\FactoryInterface;
+use Laminas\ServiceManager\Factory\FactoryInterface;
 
 /**
  * Class QueueFactory

@@ -43,7 +43,7 @@ class QueueTest extends TestCase
         $this->instance->setAdapter($adapterMock);
         $this->adapterMock = $adapterMock;
 
-        $console = $this->createMock('Zend\Console\Adapter\AdapterInterface');
+        $console = $this->createMock('Laminas\Console\Adapter\AdapterInterface');
         $this->instance->setConsole($console);
     }
 

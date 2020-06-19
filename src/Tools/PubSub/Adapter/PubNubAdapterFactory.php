@@ -4,7 +4,7 @@ namespace Cinexpert\Tools\PubSub\Adapter;
 
 use PubNub\PNConfiguration;
 use PubNub\PubNub;
-use Zend\ServiceManager\Factory\FactoryInterface;
+use Laminas\ServiceManager\Factory\FactoryInterface;
 
 class PubNubAdapterFactory implements FactoryInterface
 {

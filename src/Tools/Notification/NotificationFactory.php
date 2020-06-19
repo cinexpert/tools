@@ -13,7 +13,7 @@
 namespace Cinexpert\Tools\Notification;
 
 use Interop\Container\ContainerInterface;
-use Zend\ServiceManager\Factory\FactoryInterface;
+use Laminas\ServiceManager\Factory\FactoryInterface;
 
 /**
  * Class NotificationFactory

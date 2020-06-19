@@ -15,7 +15,7 @@ namespace Cinexpert\Tools\Notification;
 use Cinexpert\Tools\ConsoleAwareInterface;
 use Cinexpert\Tools\ConsoleAwareTrait;
 use Cinexpert\Tools\Notification\Adapter\AdapterInterface;
-use Zend\Console\ColorInterface;
+use Laminas\Console\ColorInterface;
 
 /**
  * Class Notification

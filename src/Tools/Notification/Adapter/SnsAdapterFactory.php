@@ -14,7 +14,7 @@ namespace Cinexpert\Tools\Notification\Adapter;
 
 use Aws\Sns\SnsClient;
 use Interop\Container\ContainerInterface;
-use Zend\ServiceManager\Factory\FactoryInterface;
+use Laminas\ServiceManager\Factory\FactoryInterface;
 
 /**
  * Class SqsAdapterFactory

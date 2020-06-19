@@ -15,7 +15,7 @@ namespace Cinexpert\Tools\Queue;
 use Cinexpert\Tools\ConsoleAwareInterface;
 use Cinexpert\Tools\ConsoleAwareTrait;
 use Cinexpert\Tools\Queue\Adapter\AdapterInterface;
-use Zend\Console\ColorInterface;
+use Laminas\Console\ColorInterface;
 
 /**
  * Class Queue
