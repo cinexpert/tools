@@ -46,25 +46,14 @@ class Mail
 
     const IMAP_MAILBOX_FORMAT_STRING = '{%s:%s/%s/novalidate-cert}';
 
-    /**
-     * Mail constructor.
-     *
-     * @param string|null $inboxUsername
-     * @param string|null $inboxPassword
-     * @param string|null $inboxHost
-     * @param string|null $inboxEncryption
-     * @param int|null $inboxPort
-     * @param string|null $inboxType
-     * @throws \Exception
-     */
-    public function __construct(
+    public function connectToInbox(
         string $inboxUsername = null,
         string $inboxPassword = null,
         string $inboxHost = null,
         string $inboxEncryption = null,
         int $inboxPort = null,
         string $inboxType = null
-    ) {
+    ): void {
         $this->inboxUsername   = $inboxUsername;
         $this->inboxPassword   = $inboxPassword;
         $this->inboxHost       = $inboxHost;

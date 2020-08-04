@@ -5,6 +5,7 @@ return [
         [
             'invokables' =>
                 [
+                    'mail' => \Cinexpert\Tools\Mail\Mail::class,
                 ],
             'factories' =>
                 [
