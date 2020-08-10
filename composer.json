@@ -7,6 +7,7 @@
     "require": {
         "php": ">=7.1",
         "ext-imap": "*",
+        "ext-mailparse": "*",
         "ext-dom": "*",
         "laminas/laminas-servicemanager": "^3.3",
         "laminas/laminas-console": "^2.7",
