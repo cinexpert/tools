@@ -260,6 +260,21 @@ class Mail
     }
 
     /**
+     * Close the connection to the Mailbox.
+     *
+     * @throws \Exception
+     */
+    public function closeConnection(): void
+    {
+        if ($this->inboxType === self::INBOX_TYPE_IMAP) {
+            imap_close($this->inbox);
+        } else {
+            // TODO Implement move for other protocols
+            throw new \Exception('Closing the connection is currently only implemented for IMAP inboxes.');
+        }
+    }
+
+    /**
      * Move the given message to the given folder.
      *
      * @param MailMessage $message
