@@ -97,6 +97,19 @@ class Mail
     }
 
     /**
+     * Check if the given folder already exists.
+     *
+     * @param string $folder
+     * @return bool
+     */
+    public function folderExists(string $folder): bool
+    {
+        $list = imap_list($this->inbox, $this->getImapInboxFormatString(), "*");
+
+        return in_array($this->getImapInboxFormatString() . $folder, $list);
+    }
+
+    /**
      * Return the number of unread messages in the inbox.
      *
      * @return int The number of unread messages.
