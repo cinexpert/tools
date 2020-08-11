@@ -124,11 +124,29 @@ class Mail
             return [];
         }
 
-        rsort($unreadInboxMessages);
+        return $this->parseMessages($unreadInboxMessages);
+    }
+
+    /**
+     * Get the list of all messages in the inbox.
+     *
+     * @return MailMessage[]
+     */
+    public function getInboxMessages(): array
+    {
+        $mc       = imap_check($this->inbox);
+        $overview = imap_fetch_overview($this->inbox, "1:{$mc->Nmsgs}", 0);
+
+        return $this->parseMessages(array_column($overview, 'msgno'));
+    }
+
+    protected function parseMessages(array $messages): array
+    {
+        rsort($messages);
 
         $unreadMessages = [];
 
-        foreach ($unreadInboxMessages as $i) {
+        foreach ($messages as $i) {
             $message = imap_fetchheader($this->inbox, $i) . imap_body($this->inbox, $i);
             $headers = imap_headerinfo($this->inbox, $i);
 
