@@ -28,16 +28,16 @@ use Laminas\Console\Adapter\AdapterInterface as Console;
  */
 trait ConsoleAwareTrait
 {
-    /** @var  Console */
+    /** @var Console|null */
     protected $console;
 
-    /** @var  bool */
+    /** @var bool */
     protected $verbose;
 
     /**
      * Get the console adapter
      *
-     * @return Console
+     * @return Console|null
      */
     public function getConsole()
     {

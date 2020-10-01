@@ -29,7 +29,7 @@ interface ConsoleAwareInterface
     /**
      * Get the console adapter
      *
-     * @return Console
+     * @return Console|null
      */
     public function getConsole();
 
