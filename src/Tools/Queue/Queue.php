@@ -64,10 +64,15 @@ class Queue implements ConsoleAwareInterface
      * @param string $queueUrl
      * @param string $messageBody
      * @param string|null $messageGroupId In case of a FIFO queue, messages can be grouped
+     * @param string|null $messageDeduplicationId In case of a FIFO queue, a deduplication ID can be provided
      * @return Queue Fluent interface
      */
-    public function sendMessage(string $queueUrl, string $messageBody, string $messageGroupId = null)
-    {
+    public function sendMessage(
+        string $queueUrl,
+        string $messageBody,
+        string $messageGroupId = null,
+        string $messageDeduplicationId = null
+    ) {
         // Check first if we are running in a console
         if ($this->getConsole()) {
             $this->getConsole()->writeLine(
@@ -76,7 +81,7 @@ class Queue implements ConsoleAwareInterface
             );
         }
 
-        $this->getAdapter()->sendMessage($queueUrl, $messageBody, $messageGroupId);
+        $this->getAdapter()->sendMessage($queueUrl, $messageBody, $messageGroupId, $messageDeduplicationId);
 
         return $this;
     }

@@ -51,8 +51,12 @@ class SqsAdapter implements AdapterInterface
     /**
      * @inheritdoc
      */
-    public function sendMessage(string $queueUrl, string $messageBody, string $messageGroupId = null): AdapterInterface
-    {
+    public function sendMessage(
+        string $queueUrl,
+        string $messageBody,
+        string $messageGroupId = null,
+        string $messageDeduplicationId = null
+    ): AdapterInterface {
         $params =
             [
                 'QueueUrl'    => $queueUrl,
@@ -61,6 +65,10 @@ class SqsAdapter implements AdapterInterface
 
         if ($messageGroupId) {
             $params['MessageGroupId'] = $messageGroupId;
+        }
+
+        if ($messageDeduplicationId) {
+            $params['MessageDeduplicationId'] = $messageDeduplicationId;
         }
 
         $this->getSqsClient()->sendMessage($params);

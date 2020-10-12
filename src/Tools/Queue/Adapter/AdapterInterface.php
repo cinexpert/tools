@@ -32,9 +32,15 @@ interface AdapterInterface
      * @param string $queueUrl
      * @param string $messageBody
      * @param string $messageGroupId In case of a FIFO queue, messages can be grouped
+     * @param string $messageDeduplicationId In case of a FIFO queue, a deduplication ID can be provided
      * @return $this
      */
-    public function sendMessage(string $queueUrl, string $messageBody, string $messageGroupId = null): AdapterInterface;
+    public function sendMessage(
+        string $queueUrl,
+        string $messageBody,
+        string $messageGroupId = null,
+        string $messageDeduplicationId = null
+    ): AdapterInterface;
 
     /**
      * Receive a message.

@@ -81,6 +81,24 @@ class SqsAdapterTest extends TestCase
         $this->instance->sendMessage($queueUrl, $messageBody, $messageGroupId);
     }
 
+    public function testSendMessageWithMessageDeduplicationId()
+    {
+        $queueUrl               = 'my-queue';
+        $messageBody            = 'gzegezbzrbrzbzrgagaebrzbnrzb';
+        $messageDeduplicationId = 'deduplication-id';
+
+        $this->sqsMock
+            ->expects($this->once())
+            ->method('sendMessage')
+            ->with([
+                'QueueUrl'               => $queueUrl,
+                'MessageBody'            => $messageBody,
+                'MessageDeduplicationId' => $messageDeduplicationId
+            ]);
+
+        $this->instance->sendMessage($queueUrl, $messageBody, null, $messageDeduplicationId);
+    }
+
     public function testReceiveMessage()
     {
         $queueUrl = 'my-queue';

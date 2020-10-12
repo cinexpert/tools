@@ -74,6 +74,20 @@ class QueueTest extends TestCase
         $this->instance->sendMessage($queueUrl, $messageBody, $messageGroupId);
     }
 
+    public function testSendMessageWithMessageDeduplicationId()
+    {
+        $queueUrl               = 'my-queue';
+        $messageBody            = 'gzegezbzrbrzbzrgagaebrzbnrzb';
+        $messageDeduplicationId = 'deduplication-id';
+
+        $this->adapterMock
+            ->expects($this->once())
+            ->method('sendMessage')
+            ->with($queueUrl, $messageBody, null, $messageDeduplicationId);
+
+        $this->instance->sendMessage($queueUrl, $messageBody, null, $messageDeduplicationId);
+    }
+
     public function testReceiveMessage()
     {
         $queueUrl = 'my-queue';
