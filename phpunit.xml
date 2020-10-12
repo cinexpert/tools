@@ -14,13 +14,13 @@
          testSuiteLoaderClass="PHPUnit\Runner\StandardTestSuiteLoader"
          verbose="true">
     <testsuites>
-        <testsuite name="Tools test suite">
-            <directory>Tools</directory>
+        <testsuite name="CineXpert Tools test suite">
+            <directory>tests/Tools</directory>
         </testsuite>
     </testsuites>
     <filter>
         <whitelist processUncoveredFilesFromWhitelist="true">
-            <directory suffix=".php">../src</directory>
+            <directory suffix=".php">src</directory>
         </whitelist>
     </filter>
 </phpunit>

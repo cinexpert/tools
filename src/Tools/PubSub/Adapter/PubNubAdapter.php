@@ -95,11 +95,11 @@ class PubNubAdapter implements AdapterInterface
     /**
      * @inheritdoc
      */
-    public function subscribe(array $channels, callable $callable): void
+    public function subscribe(array $channels): void
     {
         $this
             ->getPubNub()
             ->subscribe()
-            ->channels($channels, $callable);
+            ->channels($channels);
     }
 }

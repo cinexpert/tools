@@ -26,10 +26,10 @@ interface AdapterInterface
 {
     /**
      * @param string $channel
-     * @param $message
+     * @param string $message
      * @return mixed
      */
-    public function publish(string $channel, $message);
+    public function publish(string $channel, string $message);
 
     /**
      * Get a list of everyone in every channel, grouped by channel.
@@ -38,5 +38,5 @@ interface AdapterInterface
      */
     public function hereNow(): array;
 
-    public function subscribe(array $channels, callable $callable): void;
+    public function subscribe(array $channels): void;
 }

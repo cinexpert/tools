@@ -63,6 +63,24 @@ class SqsAdapterTest extends TestCase
         $this->instance->sendMessage($queueUrl, $messageBody);
     }
 
+    public function testSendMessageWithMessageGroupId()
+    {
+        $queueUrl       = 'my-queue';
+        $messageBody    = 'gzegezbzrbrzbzrgagaebrzbnrzb';
+        $messageGroupId = 'group-id';
+
+        $this->sqsMock
+            ->expects($this->once())
+            ->method('sendMessage')
+            ->with([
+                'QueueUrl'       => $queueUrl,
+                'MessageBody'    => $messageBody,
+                'MessageGroupId' => $messageGroupId
+            ]);
+
+        $this->instance->sendMessage($queueUrl, $messageBody, $messageGroupId);
+    }
+
     public function testReceiveMessage()
     {
         $queueUrl = 'my-queue';

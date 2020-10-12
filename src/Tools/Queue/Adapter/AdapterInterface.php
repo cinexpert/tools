@@ -31,9 +31,10 @@ interface AdapterInterface
      *
      * @param string $queueUrl
      * @param string $messageBody
+     * @param string $messageGroupId In case of a FIFO queue, messages can be grouped
      * @return $this
      */
-    public function sendMessage(string $queueUrl, string $messageBody): AdapterInterface;
+    public function sendMessage(string $queueUrl, string $messageBody, string $messageGroupId = null): AdapterInterface;
 
     /**
      * Receive a message.

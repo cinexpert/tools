@@ -60,6 +60,20 @@ class QueueTest extends TestCase
         $this->instance->sendMessage($queueUrl, $messageBody);
     }
 
+    public function testSendMessageWithMessageGroupId()
+    {
+        $queueUrl       = 'my-queue';
+        $messageBody    = 'gzegezbzrbrzbzrgagaebrzbnrzb';
+        $messageGroupId = 'group-id';
+
+        $this->adapterMock
+            ->expects($this->once())
+            ->method('sendMessage')
+            ->with($queueUrl, $messageBody, $messageGroupId);
+
+        $this->instance->sendMessage($queueUrl, $messageBody, $messageGroupId);
+    }
+
     public function testReceiveMessage()
     {
         $queueUrl = 'my-queue';

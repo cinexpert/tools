@@ -117,7 +117,7 @@ class Mail
      */
     public function getNumberOfUnreadMessages()
     {
-        if (!$this->inbox) {
+        if ($this->inbox === null) {
             throw new \Exception("Inbox not configured. Please provide inbox credentials.");
         }
 
@@ -219,6 +219,7 @@ class Mail
 
         $listLength = $list->length;
         while ($listLength > 0) {
+            /** @var \DOMElement|null $blockquote */
             $blockquote = $list->item(0);
 
             if ($blockquote && strpos($blockquote->getAttribute('class'), 'gmail_quote') !== false) {
@@ -229,16 +230,6 @@ class Mail
         }
 
         return $doc->saveHTML();
-    }
-
-    /**
-     * Delete the given message from the inbox.
-     *
-     * @param MailMessage $message
-     */
-    public function deleteMessage(MailMessage $message): void
-    {
-        $this->inbox->removeMessage($message->getId());
     }
 
     /**

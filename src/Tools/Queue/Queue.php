@@ -63,9 +63,10 @@ class Queue implements ConsoleAwareInterface
      *
      * @param string $queueUrl
      * @param string $messageBody
+     * @param string|null $messageGroupId In case of a FIFO queue, messages can be grouped
      * @return Queue Fluent interface
      */
-    public function sendMessage(string $queueUrl, string $messageBody)
+    public function sendMessage(string $queueUrl, string $messageBody, string $messageGroupId = null)
     {
         // Check first if we are running in a console
         if ($this->getConsole()) {
@@ -75,7 +76,7 @@ class Queue implements ConsoleAwareInterface
             );
         }
 
-        $this->getAdapter()->sendMessage($queueUrl, $messageBody);
+        $this->getAdapter()->sendMessage($queueUrl, $messageBody, $messageGroupId);
 
         return $this;
     }

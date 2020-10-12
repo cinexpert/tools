@@ -63,8 +63,8 @@ class PubSub
         return $this->getAdapter()->hereNow();
     }
 
-    public function subscribe(array $channels, callable $callable): void
+    public function subscribe(array $channels): void
     {
-        $this->getAdapter()->subscribe($channels, $callable);
+        $this->getAdapter()->subscribe($channels);
     }
 }
