@@ -147,7 +147,12 @@ class Mail
      */
     public function getInboxMessages(): array
     {
-        $mc       = imap_check($this->inbox);
+        $mc = imap_check($this->inbox);
+
+        if ($mc->Nmsgs === 0) {
+            return [];
+        }
+
         $overview = imap_fetch_overview($this->inbox, "1:{$mc->Nmsgs}", 0);
 
         return $this->parseMessages(array_column($overview, 'msgno'));
