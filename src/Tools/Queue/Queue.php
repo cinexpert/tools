@@ -1,13 +1,14 @@
 <?php
+
 /**
  * Queue.php
  *
- * @date        26.02.2018
- * @author      Pascal Paulis <pascal.paulis@cinexpert.net>
- * @file        Queue.php
- * @copyright   Copyright (c) CineXpert - All rights reserved
- * @license     Unauthorized copying of this source code, via any medium is strictly
- *              prohibited, proprietary and confidential.
+ * @date      26.02.2018
+ * @author    Pascal Paulis <pascal.paulis@cinexpert.net>
+ * @file      Queue.php
+ * @copyright Copyright (c) CineXpert - All rights reserved
+ * @license   Unauthorized copying of this source code, via any medium is strictly
+ *            prohibited, proprietary and confidential.
  */
 
 namespace Cinexpert\Tools\Queue;
@@ -19,7 +20,7 @@ use Cinexpert\Tools\Queue\Adapter\AdapterInterface;
 /**
  * Class Queue
  *
- * @package     Cinexpert  
+ * @package     Cinexpert
  * @subpackage  Tools
  * @author      Pascal Paulis <pascal.paulis@cinexpert.net>
  * @copyright   Copyright (c) CineXpert - All rights reserved
@@ -30,7 +31,7 @@ class Queue implements ConsoleAwareInterface
 {
     use ConsoleAwareTrait;
 
-    const QUEUE_ADAPTER_SQS = 'sqs';
+    public const QUEUE_ADAPTER_SQS = 'sqs';
 
     /** @var AdapterInterface $adapter */
     protected $adapter;
@@ -92,7 +93,9 @@ class Queue implements ConsoleAwareInterface
     {
         // Check first if we are running in a console
         if ($this->getConsole()) {
-            $this->getConsole()->writeln((new \DateTime())->format('[c] ') . "Checking queue for messages on $queueUrl ...");
+            $this->getConsole()->writeln(
+                (new \DateTime())->format('[c] ') . "Checking queue for messages on $queueUrl ..."
+            );
         }
 
         return $this->getAdapter()->receiveMessage($queueUrl);

@@ -1,13 +1,14 @@
 <?php
+
 /**
  * Mail.php
  *
- * @date        04.08.2020
- * @author      Pascal Paulis <pascal.paulis@cinexpert.net>
- * @file        Mail.php
- * @copyright   Copyright (c) CineXpert - All rights reserved
- * @license     Unauthorized copying of this source code, via any medium is strictly
- *              prohibited, proprietary and confidential.
+ * @date      04.08.2020
+ * @author    Pascal Paulis <pascal.paulis@cinexpert.net>
+ * @file      Mail.php
+ * @copyright Copyright (c) CineXpert - All rights reserved
+ * @license   Unauthorized copying of this source code, via any medium is strictly
+ *            prohibited, proprietary and confidential.
  */
 
 namespace Cinexpert\Tools\Mail;
@@ -17,8 +18,8 @@ use PhpMimeMailParser\Parser;
 /**
  * Mail
  *
- * @package     Main
- * @subpackage  Service
+ * @package     Cinexpert
+ * @subpackage  Tools
  * @author      Pascal Paulis <pascal.paulis@vaconsulting.lu>
  * @copyright   Copyright (c) CineXpert - All rights reserved
  * @license     Unauthorized copying of this source code, via any medium is strictly
@@ -41,10 +42,10 @@ class Mail
     /** @var resource */
     protected $inbox;
 
-    const INBOX_TYPE_IMAP = 'imap';
-    const INBOX_TYPE_POP3 = 'pop3';
+    public const INBOX_TYPE_IMAP = 'imap';
+    public const INBOX_TYPE_POP3 = 'pop3';
 
-    const IMAP_MAILBOX_FORMAT_STRING = '{%s:%s/%s/novalidate-cert}';
+    public const IMAP_MAILBOX_FORMAT_STRING = '{%s:%s/%s/novalidate-cert}';
 
     public function connectToInbox(
         string $inboxUsername = null,
@@ -172,7 +173,7 @@ class Mail
             $parser->setText($message);
 
             $text = $parser->getMessageBody('html') ?
-                $this->removeQuoteOfPreviousEmails($parser->getMessageBody('html')):
+                $this->removeQuoteOfPreviousEmails($parser->getMessageBody('html')) :
                 $parser->getMessageBody('text');
 
             $unreadMessage = new MailMessage();
@@ -200,7 +201,7 @@ class Mail
                     ->setContentId($attachment->getContentID());
 
                 $attachment->getContentDisposition() === 'attachment' ?
-                    $unreadMessage->addAttachment($mailMessageAttachment):
+                    $unreadMessage->addAttachment($mailMessageAttachment) :
                     $unreadMessage->addInlineAttachment($mailMessageAttachment);
             }
 

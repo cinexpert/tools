@@ -1,13 +1,14 @@
 <?php
+
 /**
  * AdapterInterface.php
  *
- * @date        20.05.2018
- * @author      Pascal Paulis <pascal.paulis@cinexpert.net>
- * @file        AdapterInterface.php
- * @copyright   Copyright (c) CineXpert - All rights reserved
- * @license     Unauthorized copying of this source code, via any medium is strictly
- *              prohibited, proprietary and confidential.
+ * @date      20.05.2018
+ * @author    Pascal Paulis <pascal.paulis@cinexpert.net>
+ * @file      AdapterInterface.php
+ * @copyright Copyright (c) CineXpert - All rights reserved
+ * @license   Unauthorized copying of this source code, via any medium is strictly
+ *            prohibited, proprietary and confidential.
  */
 
 namespace Cinexpert\Tools\PubSub\Adapter;
@@ -15,7 +16,7 @@ namespace Cinexpert\Tools\PubSub\Adapter;
 /**
  * AdapterInterface
  *
- * @package     Application  
+ * @package     Application
  * @subpackage  Service
  * @author      Pascal Paulis <pascal.paulis@cinexpert.net>
  * @copyright   Copyright (c) CineXpert - All rights reserved

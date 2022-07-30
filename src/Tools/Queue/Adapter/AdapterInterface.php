@@ -1,13 +1,14 @@
 <?php
+
 /**
  * AdapterInterface.php
  *
- * @date        27.02.2018
- * @author      Pascal Paulis <pascal.paulis@cinexpert.net>
- * @file        AdapterInterface.php
- * @copyright   Copyright (c) CineXpert - All rights reserved
- * @license     Unauthorized copying of this source code, via any medium is strictly
- *              prohibited, proprietary and confidential.
+ * @date      27.02.2018
+ * @author    Pascal Paulis <pascal.paulis@cinexpert.net>
+ * @file      AdapterInterface.php
+ * @copyright Copyright (c) CineXpert - All rights reserved
+ * @license   Unauthorized copying of this source code, via any medium is strictly
+ *            prohibited, proprietary and confidential.
  */
 
 namespace Cinexpert\Tools\Queue\Adapter;
@@ -17,7 +18,7 @@ use Cinexpert\Tools\Queue\Message;
 /**
  * AdapterInterface
  *
- * @package     Cinexpert  
+ * @package     Cinexpert
  * @subpackage  Tools
  * @author      Pascal Paulis <pascal.paulis@cinexpert.net>
  * @copyright   Copyright (c) CineXpert - All rights reserved
@@ -31,8 +32,8 @@ interface AdapterInterface
      *
      * @param string $queueUrl
      * @param string $messageBody
-     * @param string $messageGroupId In case of a FIFO queue, messages can be grouped
-     * @param string $messageDeduplicationId In case of a FIFO queue, a deduplication ID can be provided
+     * @param string|null $messageGroupId In case of a FIFO queue, messages can be grouped
+     * @param string|null $messageDeduplicationId In case of a FIFO queue, a deduplication ID can be provided
      * @return $this
      */
     public function sendMessage(

@@ -1,11 +1,12 @@
 <?php
+
 /**
- * @date        20.05.2018
- * @author      Pascal Paulis <pascal.paulis@cinexpert.net>
- * @file        PubNubAdapter.php
- * @copyright   Copyright (c) CineXpert - All rights reserved
- * @license     Unauthorized copying of this source code, via any medium is strictly
- *              prohibited, proprietary and confidential.
+ * @date      20.05.2018
+ * @author    Pascal Paulis <pascal.paulis@cinexpert.net>
+ * @file      PubNubAdapter.php
+ * @copyright Copyright (c) CineXpert - All rights reserved
+ * @license   Unauthorized copying of this source code, via any medium is strictly
+ *            prohibited, proprietary and confidential.
  */
 
 namespace Cinexpert\Tools\PubSub\Adapter;
@@ -16,7 +17,7 @@ use PubNub\Exceptions\PubNubConnectionException;
 /**
  * PubNubAdapter
  *
- * @package     Cinexpert\Tools\PubSub\Adapter  
+ * @package     Cinexpert\Tools\PubSub\Adapter
  * @author      Pascal Paulis <pascal.paulis@cinexpert.net>
  * @copyright   Copyright (c) CineXpert - All rights reserved
  * @license     Unauthorized copying of this source code, via any medium is strictly
