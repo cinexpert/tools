@@ -10,21 +10,25 @@
         "ext-mailparse": "*",
         "ext-dom": "*",
         "laminas/laminas-servicemanager": "^3.3",
-        "laminas/laminas-console": "^2.7",
         "aws/aws-sdk-php": "^3.52",
         "pubnub/pubnub": "^4.1",
         "laminas/laminas-dependency-plugin": "^2.2",
         "laminas/laminas-mail": "^2.12",
-        "php-mime-mail-parser/php-mime-mail-parser": "^6.0"
+        "php-mime-mail-parser/php-mime-mail-parser": "^7.1"
     },
     "require-dev": {
-        "phpunit/phpunit": "^6.5",
+        "phpunit/phpunit": "^9.5",
         "squizlabs/php_codesniffer": "^3.2",
-        "phpstan/phpstan": "^0.11.19"
+        "phpstan/phpstan": "^1.8"
     },
     "autoload": {
         "psr-4": {
             "Cinexpert\\Tools\\": "src/Tools"
+        }
+    },
+    "config": {
+        "allow-plugins": {
+            "laminas/laminas-dependency-plugin": true
         }
     }
 }

@@ -15,12 +15,11 @@ namespace Cinexpert\Tools\Notification;
 use Cinexpert\Tools\ConsoleAwareInterface;
 use Cinexpert\Tools\ConsoleAwareTrait;
 use Cinexpert\Tools\Notification\Adapter\AdapterInterface;
-use Laminas\Console\ColorInterface;
 
 /**
  * Class Notification
  *
- * @package     Cinexpert  
+ * @package     Cinexpert
  * @subpackage  Tools
  * @author      Pascal Paulis <pascal.paulis@cinexpert.net>
  * @copyright   Copyright (c) CineXpert - All rights reserved
