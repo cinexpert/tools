@@ -5,3 +5,4 @@ config/*.local.php
 tests/build
 tests/coverage
 composer.lock
+.phpunit.result.cache

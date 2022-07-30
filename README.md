@@ -1,5 +1,7 @@
 # CineXpert Tools
 
+[![CircleCI](https://dl.circleci.com/status-badge/img/gh/cinexpert/tools/tree/master.svg?style=svg)](https://dl.circleci.com/status-badge/redirect/gh/cinexpert/tools/tree/master)
+
 This repository contains tools & services like a Queue, Encryption, etc. Every tool comes with an adapter pattern.
 
 ### Install dependencies
