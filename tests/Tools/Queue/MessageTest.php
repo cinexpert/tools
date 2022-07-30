@@ -17,7 +17,7 @@ use PHPUnit\Framework\TestCase;
 
 /**
  * Class MessageTest
- * 
+ *
  * @package     Cinexpert
  * @subpackage  Test
  * @author      Pascal Paulis <pascal.paulis@cinexpert.net>
@@ -30,7 +30,7 @@ class MessageTest extends TestCase
     /** @var  Message */
     protected $instance;
 
-    public function setUp()
+    public function setUp(): void
     {
         $this->instance = new Message();
     }

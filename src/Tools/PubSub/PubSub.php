@@ -15,7 +15,7 @@ namespace Cinexpert\Tools\PubSub;
 /**
  * PubSub
  *
- * @package     Cinexpert\Tools\PubSub  
+ * @package     Cinexpert\Tools\PubSub
  * @author      Pascal Paulis <pascal.paulis@cinexpert.net>
  * @copyright   Copyright (c) CineXpert - All rights reserved
  * @license     Unauthorized copying of this source code, via any medium is strictly

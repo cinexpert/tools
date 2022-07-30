@@ -68,7 +68,7 @@ class Notification implements ConsoleAwareInterface
     {
         // Check first if we are running in a console
         if ($this->getConsole()) {
-            $this->getConsole()->writeln(date_create()->format('[c] ') . "Sending a notification on $topic ...");
+            $this->getConsole()->writeln((new \DateTime())->format('[c] ') . "Sending a notification on $topic ...");
         }
 
         $this->getAdapter()->sendNotification($topic, $message);

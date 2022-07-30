@@ -30,7 +30,7 @@ class ToolsConfigTest extends TestCase
     /** @var ToolsConfig */
     protected $instance;
 
-    public function setUp()
+    public function setUp(): void
     {
         $this->instance = new ToolsConfig();
     }

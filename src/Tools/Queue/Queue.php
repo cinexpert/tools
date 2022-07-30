@@ -74,7 +74,7 @@ class Queue implements ConsoleAwareInterface
     ) {
         // Check first if we are running in a console
         if ($this->getConsole()) {
-            $this->getConsole()->writeln(date_create()->format('[c] ') . "Sending a message on $queueUrl ...");
+            $this->getConsole()->writeln((new \DateTime())->format('[c] ') . "Sending a message on $queueUrl ...");
         }
 
         $this->getAdapter()->sendMessage($queueUrl, $messageBody, $messageGroupId, $messageDeduplicationId);
@@ -92,7 +92,7 @@ class Queue implements ConsoleAwareInterface
     {
         // Check first if we are running in a console
         if ($this->getConsole()) {
-            $this->getConsole()->writeln(date_create()->format('[c] ') . "Checking queue for messages on $queueUrl ...");
+            $this->getConsole()->writeln((new \DateTime())->format('[c] ') . "Checking queue for messages on $queueUrl ...");
         }
 
         return $this->getAdapter()->receiveMessage($queueUrl);
@@ -111,7 +111,7 @@ class Queue implements ConsoleAwareInterface
         if ($this->getConsole()) {
             $this->getConsole()->writeln(sprintf(
                 "[%s] Deleting message %s on queue %s ...",
-                date_create()->format('c'),
+                (new \DateTime())->format('c'),
                 $message->getReceiptHandle(),
                 $queueUrl
             ));

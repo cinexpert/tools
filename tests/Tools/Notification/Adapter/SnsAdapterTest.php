@@ -18,7 +18,7 @@ use PHPUnit\Framework\TestCase;
 
 /**
  * Class SnsAdapterTest
- * 
+ *
  * @package     ToolsTest
  * @subpackage  Service
  * @author      Pascal Paulis <pascal.paulis@cinexpert.net>
@@ -34,7 +34,7 @@ class SnsAdapterTest extends TestCase
     /** @var MockObject */
     protected $snsMock;
 
-    public function setUp()
+    public function setUp(): void
     {
         $this->instance = new SnsAdapter();
 
