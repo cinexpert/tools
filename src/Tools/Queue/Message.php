@@ -15,7 +15,7 @@ namespace Cinexpert\Tools\Queue;
 /**
  * Message
  *
- * @package     Cinexpert  
+ * @package     Cinexpert
  * @subpackage  Tools
  * @author      Pascal Paulis <pascal.paulis@cinexpert.net>
  * @copyright   Copyright (c) CineXpert - All rights reserved

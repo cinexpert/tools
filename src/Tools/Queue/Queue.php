@@ -15,7 +15,6 @@ namespace Cinexpert\Tools\Queue;
 use Cinexpert\Tools\ConsoleAwareInterface;
 use Cinexpert\Tools\ConsoleAwareTrait;
 use Cinexpert\Tools\Queue\Adapter\AdapterInterface;
-use Laminas\Console\ColorInterface;
 
 /**
  * Class Queue
@@ -75,10 +74,7 @@ class Queue implements ConsoleAwareInterface
     ) {
         // Check first if we are running in a console
         if ($this->getConsole()) {
-            $this->getConsole()->writeLine(
-                date_create()->format('[c] ') . "Sending a message on $queueUrl ...",
-                ColorInterface::LIGHT_GREEN
-            );
+            $this->getConsole()->writeln(date_create()->format('[c] ') . "Sending a message on $queueUrl ...");
         }
 
         $this->getAdapter()->sendMessage($queueUrl, $messageBody, $messageGroupId, $messageDeduplicationId);
@@ -96,10 +92,7 @@ class Queue implements ConsoleAwareInterface
     {
         // Check first if we are running in a console
         if ($this->getConsole()) {
-            $this->getConsole()->writeLine(
-                date_create()->format('[c] ') . "Checking queue for messages on $queueUrl ...",
-                ColorInterface::WHITE
-            );
+            $this->getConsole()->writeln(date_create()->format('[c] ') . "Checking queue for messages on $queueUrl ...");
         }
 
         return $this->getAdapter()->receiveMessage($queueUrl);
@@ -116,15 +109,12 @@ class Queue implements ConsoleAwareInterface
     {
         // Check first if we are running in a console
         if ($this->getConsole()) {
-            $this->getConsole()->writeLine(
-                sprintf(
-                    "[%s] Deleting message %s on queue %s ...",
-                    date_create()->format('c'),
-                    $message->getReceiptHandle(),
-                    $queueUrl
-                ),
-                ColorInterface::LIGHT_GREEN
-            );
+            $this->getConsole()->writeln(sprintf(
+                "[%s] Deleting message %s on queue %s ...",
+                date_create()->format('c'),
+                $message->getReceiptHandle(),
+                $queueUrl
+            ));
         }
 
         $this->getAdapter()->deleteMessage($queueUrl, $message);

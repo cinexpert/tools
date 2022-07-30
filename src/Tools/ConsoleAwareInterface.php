@@ -12,7 +12,7 @@
 
 namespace Cinexpert\Tools;
 
-use Laminas\Console\Adapter\AdapterInterface as Console;
+use Symfony\Component\Console\Output\OutputInterface;
 
 /**
  * Class ConsoleAwareInterface
@@ -29,25 +29,23 @@ interface ConsoleAwareInterface
     /**
      * Get the console adapter
      *
-     * @return Console|null
+     * @return OutputInterface|null
      */
-    public function getConsole();
+    public function getConsole(): ?OutputInterface;
 
     /**
      * Set the console adapter
      *
-     * @param Console $console
-     *
+     * @param OutputInterface $console
      * @return self
      */
-    public function setConsole(Console $console);
+    public function setConsole(OutputInterface $console): self;
 
     /**
      * Verbose accessor
      *
-     * @param null|bool $flag
-     *
+     * @param bool|null $flag
      * @return self|bool
      */
-    public function verbose($flag = null);
+    public function verbose(bool $flag = null);
 }
