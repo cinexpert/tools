@@ -40,7 +40,7 @@ interface ConsoleAwareInterface
      * @param OutputInterface $console
      * @return self
      */
-    public function setConsole(OutputInterface $console): self;
+    public function setConsole(OutputInterface $console);
 
     /**
      * Verbose accessor
