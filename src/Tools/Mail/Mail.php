@@ -14,6 +14,7 @@
 namespace Cinexpert\Tools\Mail;
 
 use PhpMimeMailParser\Parser;
+use \IMAP\Connection;
 
 /**
  * Mail
@@ -39,7 +40,7 @@ class Mail
     protected $inboxPort;
     /** @var string|null */
     protected $inboxType;
-    /** @var resource */
+    /** @var Connection */
     protected $inbox;
 
     public const INBOX_TYPE_IMAP = 'imap';

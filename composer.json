@@ -5,7 +5,7 @@
     "license": "proprietary",
     "homepage": "https://github.com/cinexpert/tools",
     "require": {
-        "php": "^7.4 || ^8.0",
+        "php": "^8.1",
         "ext-imap": "*",
         "ext-mailparse": "*",
         "ext-dom": "*",
