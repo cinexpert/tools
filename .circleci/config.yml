@@ -3,7 +3,7 @@ version: 2.1
 jobs:
   static:
     docker:
-      - image: cinexpert/alpine-php8-build:latest
+      - image: cinexpert/alpine-php81-build:latest
         auth:
           username: ${DOCKER_HUB_LOGIN}
           password: ${DOCKER_HUB_PASSWORD}
