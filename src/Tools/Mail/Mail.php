@@ -14,7 +14,7 @@
 namespace Cinexpert\Tools\Mail;
 
 use PhpMimeMailParser\Parser;
-use \IMAP\Connection;
+use IMAP\Connection;
 
 /**
  * Mail
