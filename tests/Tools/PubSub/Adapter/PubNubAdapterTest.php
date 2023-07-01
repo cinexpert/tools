@@ -18,7 +18,7 @@ use PHPUnit\Framework\TestCase;
 
 /**
  * Class PubNubAdapterTest
- * 
+ *
  * @package     ToolsTest
  * @subpackage  Service
  * @author      Pascal Paulis <pascal.paulis@cinexpert.net>
@@ -34,7 +34,7 @@ class PubNubAdapterTest extends TestCase
     /** @var MockObject */
     protected $pubnubMock;
 
-    public function setUp()
+    public function setUp(): void
     {
         $this->instance = new PubNubAdapter();
 

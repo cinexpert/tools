@@ -1,13 +1,14 @@
 <?php
+
 /**
  * AwsConfig.php
  *
- * @date        27.02.2018
- * @author      Pascal Paulis <pascal.paulis@cinexpert.net>
- * @file        AwsConfig.php
- * @copyright   Copyright (c) CineXpert - All rights reserved
- * @license     Unauthorized copying of this source code, via any medium is strictly
- *              prohibited, proprietary and confidential.
+ * @date      27.02.2018
+ * @author    Pascal Paulis <pascal.paulis@cinexpert.net>
+ * @file      AwsConfig.php
+ * @copyright Copyright (c) CineXpert - All rights reserved
+ * @license   Unauthorized copying of this source code, via any medium is strictly
+ *            prohibited, proprietary and confidential.
  */
 
 namespace Cinexpert\Tools;

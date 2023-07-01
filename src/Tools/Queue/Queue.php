@@ -1,13 +1,14 @@
 <?php
+
 /**
  * Queue.php
  *
- * @date        26.02.2018
- * @author      Pascal Paulis <pascal.paulis@cinexpert.net>
- * @file        Queue.php
- * @copyright   Copyright (c) CineXpert - All rights reserved
- * @license     Unauthorized copying of this source code, via any medium is strictly
- *              prohibited, proprietary and confidential.
+ * @date      26.02.2018
+ * @author    Pascal Paulis <pascal.paulis@cinexpert.net>
+ * @file      Queue.php
+ * @copyright Copyright (c) CineXpert - All rights reserved
+ * @license   Unauthorized copying of this source code, via any medium is strictly
+ *            prohibited, proprietary and confidential.
  */
 
 namespace Cinexpert\Tools\Queue;
@@ -15,12 +16,11 @@ namespace Cinexpert\Tools\Queue;
 use Cinexpert\Tools\ConsoleAwareInterface;
 use Cinexpert\Tools\ConsoleAwareTrait;
 use Cinexpert\Tools\Queue\Adapter\AdapterInterface;
-use Laminas\Console\ColorInterface;
 
 /**
  * Class Queue
  *
- * @package     Cinexpert  
+ * @package     Cinexpert
  * @subpackage  Tools
  * @author      Pascal Paulis <pascal.paulis@cinexpert.net>
  * @copyright   Copyright (c) CineXpert - All rights reserved
@@ -31,7 +31,7 @@ class Queue implements ConsoleAwareInterface
 {
     use ConsoleAwareTrait;
 
-    const QUEUE_ADAPTER_SQS = 'sqs';
+    public const QUEUE_ADAPTER_SQS = 'sqs';
 
     /** @var AdapterInterface $adapter */
     protected $adapter;
@@ -75,10 +75,7 @@ class Queue implements ConsoleAwareInterface
     ) {
         // Check first if we are running in a console
         if ($this->getConsole()) {
-            $this->getConsole()->writeLine(
-                date_create()->format('[c] ') . "Sending a message on $queueUrl ...",
-                ColorInterface::LIGHT_GREEN
-            );
+            $this->getConsole()->writeln((new \DateTime())->format('[c] ') . "Sending a message on $queueUrl ...");
         }
 
         $this->getAdapter()->sendMessage($queueUrl, $messageBody, $messageGroupId, $messageDeduplicationId);
@@ -96,9 +93,8 @@ class Queue implements ConsoleAwareInterface
     {
         // Check first if we are running in a console
         if ($this->getConsole()) {
-            $this->getConsole()->writeLine(
-                date_create()->format('[c] ') . "Checking queue for messages on $queueUrl ...",
-                ColorInterface::WHITE
+            $this->getConsole()->writeln(
+                (new \DateTime())->format('[c] ') . "Checking queue for messages on $queueUrl ..."
             );
         }
 
@@ -116,15 +112,12 @@ class Queue implements ConsoleAwareInterface
     {
         // Check first if we are running in a console
         if ($this->getConsole()) {
-            $this->getConsole()->writeLine(
-                sprintf(
-                    "[%s] Deleting message %s on queue %s ...",
-                    date_create()->format('c'),
-                    $message->getReceiptHandle(),
-                    $queueUrl
-                ),
-                ColorInterface::LIGHT_GREEN
-            );
+            $this->getConsole()->writeln(sprintf(
+                "[%s] Deleting message %s on queue %s ...",
+                (new \DateTime())->format('c'),
+                $message->getReceiptHandle(),
+                $queueUrl
+            ));
         }
 
         $this->getAdapter()->deleteMessage($queueUrl, $message);

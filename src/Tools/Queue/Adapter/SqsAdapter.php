@@ -1,13 +1,14 @@
 <?php
+
 /**
  * SqsAdapter.php
  *
- * @date        27.02.2018
- * @author      Pascal Paulis <pascal.paulis@cinexpert.net>
- * @file        SqsAdapter.php
- * @copyright   Copyright (c) CineXpert - All rights reserved
- * @license     Unauthorized copying of this source code, via any medium is strictly
- *              prohibited, proprietary and confidential.
+ * @date      27.02.2018
+ * @author    Pascal Paulis <pascal.paulis@cinexpert.net>
+ * @file      SqsAdapter.php
+ * @copyright Copyright (c) CineXpert - All rights reserved
+ * @license   Unauthorized copying of this source code, via any medium is strictly
+ *            prohibited, proprietary and confidential.
  */
 
 namespace Cinexpert\Tools\Queue\Adapter;
@@ -18,12 +19,12 @@ use Cinexpert\Tools\Queue\Message;
 /**
  * SqsAdapter
  *
- * @package     Tools  
- * @subpackage  Service
- * @author      Pascal Paulis <pascal.paulis@cinexpert.net>
- * @copyright   Copyright (c) CineXpert - All rights reserved
- * @license     Unauthorized copying of this source code, via any medium is strictly
- *              prohibited, proprietary and confidential.
+ * @package    Tools
+ * @subpackage Service
+ * @author     Pascal Paulis <pascal.paulis@cinexpert.net>
+ * @copyright  Copyright (c) CineXpert - All rights reserved
+ * @license    Unauthorized copying of this source code, via any medium is strictly
+ *             prohibited, proprietary and confidential.
  */
 class SqsAdapter implements AdapterInterface
 {

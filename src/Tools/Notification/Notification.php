@@ -1,13 +1,14 @@
 <?php
+
 /**
  * Notification.php
  *
- * @date        26.02.2018
- * @author      Pascal Paulis <pascal.paulis@cinexpert.net>
- * @file        Queue.php
- * @copyright   Copyright (c) CineXpert - All rights reserved
- * @license     Unauthorized copying of this source code, via any medium is strictly
- *              prohibited, proprietary and confidential.
+ * @date      26.02.2018
+ * @author    Pascal Paulis <pascal.paulis@cinexpert.net>
+ * @file      Queue.php
+ * @copyright Copyright (c) CineXpert - All rights reserved
+ * @license   Unauthorized copying of this source code, via any medium is strictly
+ *            prohibited, proprietary and confidential.
  */
 
 namespace Cinexpert\Tools\Notification;
@@ -15,12 +16,11 @@ namespace Cinexpert\Tools\Notification;
 use Cinexpert\Tools\ConsoleAwareInterface;
 use Cinexpert\Tools\ConsoleAwareTrait;
 use Cinexpert\Tools\Notification\Adapter\AdapterInterface;
-use Laminas\Console\ColorInterface;
 
 /**
  * Class Notification
  *
- * @package     Cinexpert  
+ * @package     Cinexpert
  * @subpackage  Tools
  * @author      Pascal Paulis <pascal.paulis@cinexpert.net>
  * @copyright   Copyright (c) CineXpert - All rights reserved
@@ -31,7 +31,7 @@ class Notification implements ConsoleAwareInterface
 {
     use ConsoleAwareTrait;
 
-    const NOTIFICATION_ADAPTER_SNS = 'sns';
+    public const NOTIFICATION_ADAPTER_SNS = 'sns';
 
     /** @var AdapterInterface $adapter */
     protected $adapter;
@@ -69,10 +69,7 @@ class Notification implements ConsoleAwareInterface
     {
         // Check first if we are running in a console
         if ($this->getConsole()) {
-            $this->getConsole()->writeLine(
-                date_create()->format('[c] ') . "Sending a notification on $topic ...",
-                ColorInterface::LIGHT_GREEN
-            );
+            $this->getConsole()->writeln((new \DateTime())->format('[c] ') . "Sending a notification on $topic ...");
         }
 
         $this->getAdapter()->sendNotification($topic, $message);

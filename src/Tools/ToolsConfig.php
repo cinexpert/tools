@@ -1,13 +1,14 @@
 <?php
+
 /**
  * ToolsConfig.php
  *
- * @date        27.02.2018
- * @author      Pascal Paulis <pascal.paulis@cinexpert.net>
- * @file        ToolsConfig.php
- * @copyright   Copyright (c) CineXpert - All rights reserved
- * @license     Unauthorized copying of this source code, via any medium is strictly
- *              prohibited, proprietary and confidential.
+ * @date      27.02.2018
+ * @author    Pascal Paulis <pascal.paulis@cinexpert.net>
+ * @file      ToolsConfig.php
+ * @copyright Copyright (c) CineXpert - All rights reserved
+ * @license   Unauthorized copying of this source code, via any medium is strictly
+ *            prohibited, proprietary and confidential.
  */
 
 namespace Cinexpert\Tools;
@@ -17,12 +18,12 @@ namespace Cinexpert\Tools;
  *
  * Config object for Tools
  *
- * @package     Cinexpert
- * @subpackage  Model
- * @author      Pascal Paulis <pascal.paulis@cinexpert.net>
- * @copyright   Copyright (c) CineXpert - All rights reserved
- * @license     Unauthorized copying of this source code, via any medium is strictly
- *              prohibited, proprietary and confidential.
+ * @package    Cinexpert
+ * @subpackage Tools
+ * @author     Pascal Paulis <pascal.paulis@cinexpert.net>
+ * @copyright  Copyright (c) CineXpert - All rights reserved
+ * @license    Unauthorized copying of this source code, via any medium is strictly
+ *             prohibited, proprietary and confidential.
  */
 class ToolsConfig
 {

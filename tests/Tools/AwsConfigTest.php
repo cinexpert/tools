@@ -30,7 +30,7 @@ class AwsConfigTest extends TestCase
     /** @var AwsConfig */
     protected $instance;
 
-    public function setUp()
+    public function setUp(): void
     {
         $this->instance = new AwsConfig();
     }

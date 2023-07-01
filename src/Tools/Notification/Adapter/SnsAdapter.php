@@ -1,13 +1,14 @@
 <?php
+
 /**
  * SnsAdapter.php
  *
- * @date        27.02.2018
- * @author      Pascal Paulis <pascal.paulis@cinexpert.net>
- * @file        SnsAdapter.php
- * @copyright   Copyright (c) CineXpert - All rights reserved
- * @license     Unauthorized copying of this source code, via any medium is strictly
- *              prohibited, proprietary and confidential.
+ * @date      27.02.2018
+ * @author    Pascal Paulis <pascal.paulis@cinexpert.net>
+ * @file      SnsAdapter.php
+ * @copyright Copyright (c) CineXpert - All rights reserved
+ * @license   Unauthorized copying of this source code, via any medium is strictly
+ *            prohibited, proprietary and confidential.
  */
 
 namespace Cinexpert\Tools\Notification\Adapter;
@@ -17,12 +18,12 @@ use Aws\Sns\SnsClient;
 /**
  * SnsAdapter
  *
- * @package     Tools  
- * @subpackage  Service
- * @author      Pascal Paulis <pascal.paulis@cinexpert.net>
- * @copyright   Copyright (c) CineXpert - All rights reserved
- * @license     Unauthorized copying of this source code, via any medium is strictly
- *              prohibited, proprietary and confidential.
+ * @package    Tools
+ * @subpackage Service
+ * @author     Pascal Paulis <pascal.paulis@cinexpert.net>
+ * @copyright  Copyright (c) CineXpert - All rights reserved
+ * @license    Unauthorized copying of this source code, via any medium is strictly
+ *             prohibited, proprietary and confidential.
  */
 class SnsAdapter implements AdapterInterface
 {

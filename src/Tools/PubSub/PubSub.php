@@ -1,13 +1,14 @@
 <?php
+
 /**
  * PubSub.php
  *
- * @date        20.05.2018
- * @author      Pascal Paulis <pascal.paulis@cinexpert.net>
- * @file        PubSub.php
- * @copyright   Copyright (c) CineXpert - All rights reserved
- * @license     Unauthorized copying of this source code, via any medium is strictly
- *              prohibited, proprietary and confidential.
+ * @date      20.05.2018
+ * @author    Pascal Paulis <pascal.paulis@cinexpert.net>
+ * @file      PubSub.php
+ * @copyright Copyright (c) CineXpert - All rights reserved
+ * @license   Unauthorized copying of this source code, via any medium is strictly
+ *            prohibited, proprietary and confidential.
  */
 
 namespace Cinexpert\Tools\PubSub;
@@ -15,11 +16,11 @@ namespace Cinexpert\Tools\PubSub;
 /**
  * PubSub
  *
- * @package     Cinexpert\Tools\PubSub  
- * @author      Pascal Paulis <pascal.paulis@cinexpert.net>
- * @copyright   Copyright (c) CineXpert - All rights reserved
- * @license     Unauthorized copying of this source code, via any medium is strictly
- *              prohibited, proprietary and confidential.
+ * @package   Cinexpert\Tools\PubSub
+ * @author    Pascal Paulis <pascal.paulis@cinexpert.net>
+ * @copyright Copyright (c) CineXpert - All rights reserved
+ * @license   Unauthorized copying of this source code, via any medium is strictly
+ *            prohibited, proprietary and confidential.
  */
 class PubSub
 {
@@ -63,6 +64,10 @@ class PubSub
         return $this->getAdapter()->hereNow();
     }
 
+    /**
+     * @param string[] $channels
+     * @return void
+     */
     public function subscribe(array $channels): void
     {
         $this->getAdapter()->subscribe($channels);

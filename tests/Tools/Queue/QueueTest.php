@@ -16,10 +16,11 @@ use Cinexpert\Tools\Queue\Message;
 use Cinexpert\Tools\Queue\Queue;
 use PHPUnit\Framework\MockObject\MockObject;
 use PHPUnit\Framework\TestCase;
+use Symfony\Component\Console\Output\OutputInterface;
 
 /**
  * Class QueueTest
- * 
+ *
  * @package     Cinexpert
  * @subpackage  Test
  * @author      Pascal Paulis <pascal.paulis@cinexpert.net>
@@ -35,7 +36,7 @@ class QueueTest extends TestCase
     /** @var MockObject */
     protected $adapterMock;
 
-    public function setUp()
+    public function setUp(): void
     {
         $this->instance = new Queue();
 
@@ -43,7 +44,7 @@ class QueueTest extends TestCase
         $this->instance->setAdapter($adapterMock);
         $this->adapterMock = $adapterMock;
 
-        $console = $this->createMock('Laminas\Console\Adapter\AdapterInterface');
+        $console = $this->createMock(OutputInterface::class);
         $this->instance->setConsole($console);
     }
 

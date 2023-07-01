@@ -18,7 +18,7 @@ use PHPUnit\Framework\TestCase;
 
 /**
  * Class PubSubTest
- * 
+ *
  * @package     Cinexpert
  * @subpackage  Test
  * @author      Pascal Paulis <pascal.paulis@cinexpert.net>
@@ -34,7 +34,7 @@ class PubSubTest extends TestCase
     /** @var MockObject */
     protected $adapterMock;
 
-    public function setUp()
+    public function setUp(): void
     {
         $this->instance = new PubSub();
 

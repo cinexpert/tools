@@ -19,7 +19,7 @@ use PHPUnit\Framework\TestCase;
 
 /**
  * Class SqsAdapterTest
- * 
+ *
  * @package     ToolsTest
  * @subpackage  Service
  * @author      Pascal Paulis <pascal.paulis@cinexpert.net>
@@ -35,7 +35,7 @@ class SqsAdapterTest extends TestCase
     /** @var MockObject */
     protected $sqsMock;
 
-    public function setUp()
+    public function setUp(): void
     {
         $this->instance = new SqsAdapter();
 
