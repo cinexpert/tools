@@ -42,6 +42,9 @@ class ToolsConfig
     /** @var string */
     protected $subscriberKey;
 
+    /** @var string|null */
+    protected $sqsEndpoint;
+
     /**
      * @return string
      */
@@ -130,5 +133,15 @@ class ToolsConfig
     {
         $this->subscriberKey = $subscriberKey;
         return $this;
+    }
+
+    public function getSqsEndpoint(): ?string
+    {
+        return $this->sqsEndpoint;
+    }
+
+    public function setSqsEndpoint(?string $sqsEndpoint): void
+    {
+        $this->sqsEndpoint = $sqsEndpoint;
     }
 }

@@ -14,6 +14,7 @@
 namespace Cinexpert\Tools\Queue\Adapter;
 
 use Aws\Sqs\SqsClient;
+use Cinexpert\Tools\AwsConfig;
 use Interop\Container\ContainerInterface;
 use Laminas\ServiceManager\Factory\FactoryInterface;
 
@@ -33,10 +34,17 @@ class SqsAdapterFactory implements FactoryInterface
 {
     public function __invoke(ContainerInterface $container, $requestedName, array $options = null)
     {
+        /** @var AwsConfig $awsConfig */
+        $awsConfig = $container->get('aws_config');
+
         $parameters = array_merge(
             ['version' => '2012-11-05'],
-            $container->get('aws_config')->toArray()
+            $awsConfig->toArray()
         );
+
+        if (!is_null($awsConfig->getSqsEndpoint())) {
+            $parameters['endpoint'] = $awsConfig->getSqsEndpoint();
+        }
 
         $adapter = new \Cinexpert\Tools\Queue\Adapter\SqsAdapter();
         $adapter->setSqsClient(new SqsClient($parameters));
