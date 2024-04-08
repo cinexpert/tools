@@ -40,7 +40,8 @@ class Tools extends ServiceManager
         $awsConfig
             ->setAwsRegion($config->getAwsRegion())
             ->setAwsKey($config->getAwsKey())
-            ->setAwsSecret($config->getAwsSecret());
+            ->setAwsSecret($config->getAwsSecret())
+            ->setSqsEndpoint($config->getSqsEndpoint());
 
         $this->setService('aws_config', $awsConfig);
 

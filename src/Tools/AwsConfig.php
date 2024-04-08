@@ -34,6 +34,9 @@ class AwsConfig
     /** @var string */
     protected $awsSecret;
 
+    /** @var string|null */
+    protected $sqsEndpoint;
+
     /**
      * Set the AWS region.
      *
@@ -120,5 +123,15 @@ class AwsConfig
         }
 
         return $configArray;
+    }
+
+    public function getSqsEndpoint(): ?string
+    {
+        return $this->sqsEndpoint;
+    }
+
+    public function setSqsEndpoint(?string $sqsEndpoint): void
+    {
+        $this->sqsEndpoint = $sqsEndpoint;
     }
 }
