@@ -50,7 +50,7 @@ trait ConsoleAwareTrait
      * @param OutputInterface $console
      * @return self
      */
-    public function setConsole(OutputInterface $console)
+    public function setConsole(OutputInterface $console): self
     {
         $this->console = $console;
         return $this;
@@ -62,7 +62,7 @@ trait ConsoleAwareTrait
      * @param bool|null $flag
      * @return self|bool
      */
-    public function verbose(bool $flag = null)
+    public function verbose(bool $flag = null): self|bool
     {
         if (is_null($flag)) {
             return $this->verbose;
