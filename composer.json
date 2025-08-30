@@ -14,7 +14,7 @@
         "pubnub/pubnub": "^4.1",
         "laminas/laminas-dependency-plugin": "^2.2",
         "laminas/laminas-mail": "^2.12",
-        "php-mime-mail-parser/php-mime-mail-parser": "^7.1",
+        "php-mime-mail-parser/php-mime-mail-parser": "^8.0",
         "symfony/console": "^6.0|^7.0"
     },
     "require-dev": {
