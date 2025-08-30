@@ -40,7 +40,7 @@ interface ConsoleAwareInterface
      * @param OutputInterface $console
      * @return self
      */
-    public function setConsole(OutputInterface $console);
+    public function setConsole(OutputInterface $console): self;
 
     /**
      * Verbose accessor
@@ -48,5 +48,5 @@ interface ConsoleAwareInterface
      * @param bool|null $flag
      * @return self|bool
      */
-    public function verbose(bool $flag = null);
+    public function verbose(bool $flag = null): self|bool;
 }
