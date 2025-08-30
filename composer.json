@@ -5,14 +5,13 @@
     "license": "proprietary",
     "homepage": "https://github.com/cinexpert/tools",
     "require": {
-        "php": "^8.1",
+        "php": "~8.1",
         "ext-imap": "*",
         "ext-mailparse": "*",
         "ext-dom": "*",
         "laminas/laminas-servicemanager": "^3.3",
         "aws/aws-sdk-php": "^3.52",
         "pubnub/pubnub": "^4.1",
-        "laminas/laminas-dependency-plugin": "^2.2",
         "laminas/laminas-mail": "^2.12",
         "php-mime-mail-parser/php-mime-mail-parser": "^8.0",
         "symfony/console": "^6.0|^7.0"
