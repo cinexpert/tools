@@ -14,8 +14,7 @@
 namespace Cinexpert\Tools\Notification\Adapter;
 
 use Aws\Sns\SnsClient;
-use Interop\Container\ContainerInterface;
-use Laminas\ServiceManager\Factory\FactoryInterface;
+use Psr\Container\ContainerInterface;
 
 /**
  * Class SqsAdapterFactory
@@ -29,9 +28,9 @@ use Laminas\ServiceManager\Factory\FactoryInterface;
  *
  * @codeCoverageIgnore
  */
-class SnsAdapterFactory implements FactoryInterface
+class SnsAdapterFactory
 {
-    public function __invoke(ContainerInterface $container, $requestedName, array $options = null)
+    public function __invoke(ContainerInterface $container, string $requestedName, ?array $options = null)
     {
         $parameters = array_merge(
             ['version' => '2010-03-31'],

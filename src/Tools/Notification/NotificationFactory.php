@@ -13,8 +13,7 @@
 
 namespace Cinexpert\Tools\Notification;
 
-use Interop\Container\ContainerInterface;
-use Laminas\ServiceManager\Factory\FactoryInterface;
+use Psr\Container\ContainerInterface;
 
 /**
  * Class NotificationFactory
@@ -28,9 +27,9 @@ use Laminas\ServiceManager\Factory\FactoryInterface;
  *
  * @codeCoverageIgnore
  */
-class NotificationFactory implements FactoryInterface
+class NotificationFactory
 {
-    public function __invoke(ContainerInterface $container, $requestedName, array $options = null)
+    public function __invoke(ContainerInterface $container, string $requestedName, ?array $options = null)
     {
         $notification = new \Cinexpert\Tools\Notification\Notification();
         $notification->setAdapter($container->get('notification.adapter.sns'));

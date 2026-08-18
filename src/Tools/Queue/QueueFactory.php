@@ -13,8 +13,7 @@
 
 namespace Cinexpert\Tools\Queue;
 
-use Interop\Container\ContainerInterface;
-use Laminas\ServiceManager\Factory\FactoryInterface;
+use Psr\Container\ContainerInterface;
 
 /**
  * Class QueueFactory
@@ -28,9 +27,9 @@ use Laminas\ServiceManager\Factory\FactoryInterface;
  *
  * @codeCoverageIgnore
  */
-class QueueFactory implements FactoryInterface
+class QueueFactory
 {
-    public function __invoke(ContainerInterface $container, $requestedName, array $options = null)
+    public function __invoke(ContainerInterface $container, string $requestedName, ?array $options = null)
     {
         $queue = new \Cinexpert\Tools\Queue\Queue();
         $queue->setAdapter($container->get('queue.adapter.sqs'));

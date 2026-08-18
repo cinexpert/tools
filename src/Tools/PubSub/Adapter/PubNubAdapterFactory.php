@@ -4,11 +4,11 @@ namespace Cinexpert\Tools\PubSub\Adapter;
 
 use PubNub\PNConfiguration;
 use PubNub\PubNub;
-use Laminas\ServiceManager\Factory\FactoryInterface;
+use Psr\Container\ContainerInterface;
 
-class PubNubAdapterFactory implements FactoryInterface
+class PubNubAdapterFactory
 {
-    public function __invoke(\Interop\Container\ContainerInterface $container, $requestedName, array $options = null)
+    public function __invoke(ContainerInterface $container, string $requestedName, ?array $options = null)
     {
         $pubNubConfig = $container->get('pubsub_config');
 
